@@ -2,14 +2,46 @@
   "name": "react-infinite-card-example",
   "version": "0.1.0",
   "private": true,
+  "config": {
+    "prettier_glob": "**/*.{ts,js,tsx,jsx,json,less,scss,css}",
+    "eslint_glob": "{src,test}/**/*.{ts,js}?(x)"
+  },
   "scripts": {
+    "lint": "eslint $npm_package_config_eslint_glob",
+    "lint:fix": "yarn lint --fix",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "dependencies": {
+    "isomorphic-fetch": "^3.0.0",
     "next": "9.5.5",
     "react": "16.14.0",
-    "react-dom": "16.14.0"
+    "react-dom": "16.14.0",
+    "react-infinite-scroll-component": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.11.9",
+    "@types/react": "^16.9.52",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.1.2",
+    "typescript": "^4.0.3"
   }
 }
