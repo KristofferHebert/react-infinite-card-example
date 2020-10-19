@@ -16,7 +16,7 @@ const CardList: FC = () => {
 
   useEffect(() => {
     fetchMoreCards(router, state, dispatch);
-  }, [dispatch, router, router.query.search, state]);
+  }, [router, router.query.search]);
 
   return (
     <section className="cardList">
