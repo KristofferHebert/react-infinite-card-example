@@ -3,7 +3,8 @@ module.exports = {
     // removeDeprecatedGapUtilities: true,
     // purgeLayersByDefault: true,
   },
-  purge: [],
+  // TBD Resolve bug with PostCSS
+  purge: false,
   theme: {
     extend: {},
     container: {
@@ -12,4 +13,4 @@ module.exports = {
   },
   variants: {},
   plugins: [],
-}
+};
