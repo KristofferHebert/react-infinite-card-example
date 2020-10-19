@@ -16,26 +16,29 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 ## Folder Structure
 
-### Pages
+### src/pages
 
 Main React components that used by Next Router and routed based path and file name.
 
-### Components
+### src/components
 
 Individual React Components for App.
 
-### Utils
+### src/utils
 
 Contains helper libs for App.
 
-### Stores
+### src/stores
 
 Contains hooks, context and reducers for App.
 
-### Styles
+### src/styles
 
 Contains all CSS for App.
 
+### Public
+
+Contains all public files like images or favicon.
 
 ## Production Build
 
