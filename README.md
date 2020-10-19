@@ -36,7 +36,7 @@ Contains hooks, context and reducers for App.
 
 Contains all CSS for App.
 
-### Public
+### public
 
 Contains all public files like images or favicon.
 
