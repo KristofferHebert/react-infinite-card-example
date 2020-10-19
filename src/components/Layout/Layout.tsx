@@ -11,6 +11,7 @@ type LayoutProps = {
   description?: string;
 };
 
+// TBD Add more items to head like og tags
 export const Layout: FC<LayoutProps> = ({
   children,
   title = "",
@@ -20,6 +21,7 @@ export const Layout: FC<LayoutProps> = ({
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
+      <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
       <link
         href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap"
         rel="stylesheet"
