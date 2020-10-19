@@ -38,6 +38,9 @@ Contains all CSS for App.
 
 
 ## Production Build
+
+To run a production version of App locally.
+
 ```
 yarn build
 ```
@@ -48,4 +51,4 @@ then
 yarn start
 ```
 
-To run a production version of App locally. The Build command compiles App and stores result in in build folder.
+The yarn build command compiles the App and stores result in in build folder.
