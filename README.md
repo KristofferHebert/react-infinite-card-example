@@ -35,3 +35,17 @@ Contains hooks, context and reducers for App.
 ### Styles
 
 Contains all CSS for App.
+
+
+## Production Build
+```
+yarn build
+```
+
+then
+
+```
+yarn start
+```
+
+To run a production version of App locally. The Build command compiles App and stores result in in build folder.
