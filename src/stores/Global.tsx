@@ -1,3 +1,5 @@
+// TBD Should be split up into multiple stores as application grows in complexity
+
 import {
   createContext,
   useReducer,

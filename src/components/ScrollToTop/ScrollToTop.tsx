@@ -10,7 +10,6 @@ export const ScrollToTop = () => (
     className="scrollToTop border p3 hidden md:block"
   >
     <img src="/images/uparrow.svg" width="32" alt="Up arrow" />
-    Top
   </a>
 );
 

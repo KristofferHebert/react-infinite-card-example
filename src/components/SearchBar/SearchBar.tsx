@@ -18,7 +18,7 @@ export const SearchBar: FC = () => {
       },
     });
 
-    // Using a query makes card searches shareable and crawlable
+    // Using a query makes card searches shareable
     router.push(`/?search=${state.searchTerm}`);
   };
 

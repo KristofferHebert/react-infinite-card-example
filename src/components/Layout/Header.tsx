@@ -5,15 +5,15 @@ import Link from "next/link";
 const SearchBar = dynamic(() => import("components/SearchBar"));
 
 const Header: FC = () => (
-  <nav className="nav pt-5">
+  <nav className="nav pt-5 h-32 pb-5 md:pb-0 md:h-20">
     <div className="container">
       <ul className="flex items-center justify-between flex-wrap">
-        <li className="text-xl">
+        <li className="text-center w-full md:w-auto md:text-left text-xl">
           <Link href="/">
             <a>React Infinite Card Example</a>
           </Link>
         </li>
-        <li>
+        <li className="w-full md:w-auto px-5">
           <SearchBar />
         </li>
       </ul>

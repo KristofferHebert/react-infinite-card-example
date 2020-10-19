@@ -39,6 +39,7 @@ export const fetchMoreCards = async (router, state, dispatch) => {
 
     dispatch({ type: "UPDATE_VALUE", payload });
   } catch (error) {
+    // TBD Add error message component to homepage
     console.error(error);
     dispatch({ type: "UPDATE_VALUE", payload: { error } });
   }

@@ -23,14 +23,7 @@ a {
 }
 
 .nav {
-    height: 5rem;
     @apply bg-black fixed w-full z-20;
-}
-
-.container {
-    max-width: 75%;
-    margin-right: auto;
-    margin-left: auto;
 }
 
 .cardImage {
@@ -41,7 +34,7 @@ a {
 }
 
 .cardItem {
-    min-height: 45rem;
+    min-height: 40rem;
 }
 
 .border {
@@ -51,11 +44,11 @@ a {
 .input {
     border: 1px solid gray;
     cursor: text;
-    @apply border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm text-black;
+    @apply border-2 border-gray-300 bg-white h-10 px-5 pr-16 text-sm text-black;
 }
 
 .scrollToTop {
-    right: 4.3%;
+    right: 2rem;
     bottom: 2rem;
     z-index: 10;
     opacity: .75;
