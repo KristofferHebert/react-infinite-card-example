@@ -1,12 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+First, install dependencies
+```
+yarn install
+```
 
-```bash
-npm run dev
-# or
+Then run the development server:
+```
 yarn dev
 ```
 
@@ -14,17 +14,24 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-## Learn More
+## Folder Structure
 
-To learn more about Next.js, take a look at the following resources:
+### Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Main React components that used by Next Router and routed based path and file name.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Components
 
-## Deploy on Vercel
+Individual React Components for App.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Utils
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Contains helper libs for App.
+
+### Stores
+
+Contains hooks, context and reducers for App.
+
+### Styles
+
+Contains all CSS for App.
