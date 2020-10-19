@@ -7,6 +7,9 @@ import { fetchMoreCards } from "utils/fetchMoreCards";
 const Layout = dynamic(() => import("components/Layout"));
 const CardList = dynamic(() => import("components/CardList"));
 
+// TBD: Split up search and index page into separate pages
+// TBD: Fix periodic double useEffect bug
+
 export const Home: FC = () => {
   const { state, dispatch } = useGlobalContext();
   const router = useRouter();
