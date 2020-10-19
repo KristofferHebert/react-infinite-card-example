@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
+ font-family:EB Garamond,Open Sans, sans-serif;
+ height:100%;
+ width:100%;
+ scroll-behavior: smooth;
+}
+
+body {
+    font-size:16px;
+    font-weight:400;
+    background-color:#222;
+    line-height: 1.6;
+    color: #636b6f;
+}
+
+a {
+    color: #d8d8d8;
+}
+
+.nav {
+    height: 5rem;
+    @apply bg-black fixed w-full z-20;
+}
+
+.container {
+    max-width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.cardImage {
+    width: 400px;
+}
+.cardList {
+    padding-top: 10rem;
+}
+
+.cardItem {
+    min-height: 45rem;
+}
+
+.border {
+    border: 1px solid #c4ab58;
+}
+
+.input {
+    border: 1px solid gray;
+    cursor: text;
+    @apply border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm text-black;
+}
+
+.scrollToTop {
+    right: 4.3%;
+    bottom: 2rem;
+    z-index: 10;
+    opacity: .75;
+    transition: 0.4;
+    @apply fixed text-center rounded-md p-4 bg-black;
+}
+.scrollToTop:hover {
+    opacity: 1;
+}
+
+.searchIcon {
+    margin-top: 0.9rem;
+    @apply absolute right-0 top-0 mr-4;
+}

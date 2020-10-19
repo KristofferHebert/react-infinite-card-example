@@ -1,7 +1,7 @@
-import { CardItem, CardItemProps } from './CardItem';
+import { CardItem, CardItemProps } from "./CardItem";
 
 export { CardItem };
 
 export type { CardItemProps };
 
-export default CardItem
+export default CardItem;

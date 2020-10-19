@@ -1,49 +1,47 @@
-import { fetchData } from './fetchData'
-import { config } from '../config'
-export const fetchMoreCards = async (state, dispatch) => {
+import { fetchData } from "./fetchData";
+import { config } from "config";
+export const fetchMoreCards = async (router, state, dispatch) => {
+  try {
+    dispatch({ type: "UPDATE_VALUE", payload: { isLoading: true } });
+
     // Default to first page of card api
-    let url = `${config.API_URL}/v1/cards?page=1&pageSize=${config.PAGE_SIZE}`
+    let url = `${config.API_URL}/v1/cards?page=1&pageSize=${config.PAGE_SIZE}`;
 
-    // Handle searchTerm and submit if it exists
-    if(state.submitted && state.searchTerm !== '') {
-        url += `&name=${state.searchTerm}`
-
-    } else if(state.nextPageUrl !== '') {
-        url = state.nextPageUrl
+    if (state.nextPageURL !== "") {
+      url = state.nextPageURL;
+    } else if (router.query.search) {
+      url += `&name=${router.query.search}`;
     }
-    
-    console.log(url, state, 6)
-    const response = await fetchData(url)
 
-        const { cards, _links, _totalCount } = response.data
-        let newCards
+    const response = await fetchData(url);
 
-        if(state.submitted && state.searchTerm !== '') {
-            newCards = cards
-            // Reset submit 
-            dispatch({ type: 'UPDATE_VALUE', payload: {
-                submitted: false
-            }})
-        } else {
-        // Modify array in place
-        // Memory Optimized for large card arrays
-        newCards = state.cards
-        newCards.push(...cards)
-        }
+    const { cards, _links, _totalCount } = response.data;
+    let newCards;
 
-        let payload = {
-            cards: newCards,
-            count: _totalCount
-        }
+    // If next page of cards exist, append to existing array of cards
+    if (_links) {
+      // Modify array in place
+      // Memory Optimized for large card arrays
+      newCards = state.cards;
+      newCards.push(...cards);
+    } else {
+      // Reset All cards is no _links
+      newCards = cards;
+    }
 
-        if(_links && _links.next){
-            payload.nextPageUrl = _links.next
-        }
+    let payload = {
+      cards: newCards,
+      count: _totalCount,
+      nextPageURL: _links && _links.next ? _links.next : "",
+      isLoading: false,
+      error: null,
+    };
 
-        dispatch({ type: 'UPDATE_VALUE', payload })
+    dispatch({ type: "UPDATE_VALUE", payload });
+  } catch (error) {
+    console.error(error);
+    dispatch({ type: "UPDATE_VALUE", payload: { error } });
+  }
+};
 
-
-
-}
-
-export default fetchMoreCards
+export default fetchMoreCards;

@@ -1,5 +1,5 @@
-import CardList from './CardList';
+import CardList from "./CardList";
 
-export { CardList }
+export { CardList };
 
-export default CardList
+export default CardList;

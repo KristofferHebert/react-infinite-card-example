@@ -6,6 +6,26 @@
       "dom.iterable",
       "esnext"
     ],
+    "paths": {
+      "components": [
+        "src/components"
+      ],
+      "config": [
+        "src/config"
+      ],
+      "stores": [
+        "src/config"
+      ],
+      "pages": [
+        "src/pages"
+      ],
+      "styles": [
+        "src/styles"
+      ],
+      "utils": [
+        "src/utils"
+      ]
+    },
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -16,7 +36,8 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "baseUrl": "src"
   },
   "include": [
     "next-env.d.ts",

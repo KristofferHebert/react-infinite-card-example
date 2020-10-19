@@ -1,17 +1,15 @@
-import { StrictMode, FC } from 'react'
-import { AppProps } from 'next/app'
+import { FC } from "react";
+import { AppProps } from "next/app";
 
-import { GlobalContextProvider } from '../store/Global'
-import '../styles/globals.css'
+import { GlobalContextProvider } from "stores/Global";
+import "styles/main.css";
 
-const MyApp:FC<AppProps> = ({ Component, pageProps }) => {
+const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
   return (
-  <StrictMode>
     <GlobalContextProvider>
       <Component {...pageProps} />
     </GlobalContextProvider>
-  </StrictMode>
-  )
-}
+  );
+};
 
-export default MyApp
+export default MyApp;

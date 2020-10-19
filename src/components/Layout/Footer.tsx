@@ -1,7 +1,5 @@
-import { FC, memo } from 'react'
+import { FC, memo } from "react";
 
-const Footer: FC = () => (
-    <footer></footer>
-)
+const Footer: FC = () => <footer></footer>;
 
-export default memo(Footer)
+export default memo(Footer);
