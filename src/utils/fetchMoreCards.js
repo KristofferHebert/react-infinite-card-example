@@ -1,15 +1,13 @@
 import { fetchData } from "./fetchData";
 import { config } from "config";
 export const fetchMoreCards = async (router, state, dispatch) => {
-  console.log(router);
-
   try {
     dispatch({ type: "UPDATE_VALUE", payload: { isLoading: true } });
 
     // Default to first page of card api
     let url = `${config.API_URL}/v1/cards?page=1&pageSize=${config.PAGE_SIZE}`;
     if (router.query.clear) {
-      // use default if clear paramater is set
+      // use default if clear parameter is set
     } else if (state.nextPageURL !== "") {
       url = state.nextPageURL;
     } else if (router.query.search) {
@@ -38,13 +36,15 @@ export const fetchMoreCards = async (router, state, dispatch) => {
       count: _totalCount,
       nextPageURL: _links && _links.next ? _links.next : "",
       isLoading: false,
+      searchTerm: router.query.clear ? "" : state.searchTerm,
       error: null,
     };
 
     dispatch({ type: "UPDATE_VALUE", payload });
 
+    // Clear query without firing useEffect again
     if (router.query.clear) {
-      router.push("/");
+      router.push("/", undefined, { shallow: true });
     }
   } catch (error) {
     // TBD Add error message component to homepage
