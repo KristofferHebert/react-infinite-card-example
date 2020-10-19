@@ -35,14 +35,14 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "jsx": "preserve",
     "baseUrl": "src"
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx", "tsconfig.jest.json"
   ],
   "exclude": [
     "node_modules"
