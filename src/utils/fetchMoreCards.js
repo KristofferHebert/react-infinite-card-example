@@ -1,13 +1,16 @@
 import { fetchData } from "./fetchData";
 import { config } from "config";
 export const fetchMoreCards = async (router, state, dispatch) => {
+  console.log(router);
+
   try {
     dispatch({ type: "UPDATE_VALUE", payload: { isLoading: true } });
 
     // Default to first page of card api
     let url = `${config.API_URL}/v1/cards?page=1&pageSize=${config.PAGE_SIZE}`;
-
-    if (state.nextPageURL !== "") {
+    if (router.query.clear) {
+      // use default if clear paramater is set
+    } else if (state.nextPageURL !== "") {
       url = state.nextPageURL;
     } else if (router.query.search) {
       url += `&name=${router.query.search}`;
@@ -18,14 +21,15 @@ export const fetchMoreCards = async (router, state, dispatch) => {
     const { cards, _links, _totalCount } = response.data;
     let newCards;
 
+    // Clear card if query contains clear parameter
     // If next page of cards exist, append to existing array of cards
-    if (_links) {
+    if (_links && !router.query.clear) {
       // Modify array in place
       // Memory Optimized for large card arrays
       newCards = state.cards;
       newCards.push(...cards);
     } else {
-      // Reset All cards is no _links
+      // Reset All cards if no _links and clear parameter
       newCards = cards;
     }
 
@@ -38,6 +42,10 @@ export const fetchMoreCards = async (router, state, dispatch) => {
     };
 
     dispatch({ type: "UPDATE_VALUE", payload });
+
+    if (router.query.clear) {
+      router.push("/");
+    }
   } catch (error) {
     // TBD Add error message component to homepage
     console.error(error);

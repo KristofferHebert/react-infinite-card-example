@@ -8,8 +8,8 @@ const Header: FC = () => (
   <nav className="nav pt-5 h-32 pb-5 md:pb-0 md:h-20">
     <div className="container">
       <ul className="flex items-center justify-between flex-wrap">
-        <li className="text-center w-full md:w-auto md:text-left text-xl">
-          <Link href="/">
+        <li className="text-center mb-3 md:mb-0 w-full md:w-auto md:text-left text-xl">
+          <Link href="/?clear=true" as="/">
             <a>React Infinite Card Example</a>
           </Link>
         </li>

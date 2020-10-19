@@ -34,7 +34,7 @@ export const GlobalReducer = (state = initialState, { type, payload }) => {
         ...state,
         ...payload,
       };
-    case "TOGGLE_LOADING":
+    case "ç":
       return {
         ...state,
         isLoading: !state.isLoading,
